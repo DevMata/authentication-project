@@ -5,9 +5,10 @@ import { UsersModule } from 'src/users/users.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './constants';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
-  providers: [AuthService, LocalStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy],
   imports: [
     UsersModule,
     PassportModule,
